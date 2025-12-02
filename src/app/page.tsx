@@ -1,62 +1,50 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex min-h-screen items-center justify-center bg-white font-sans font-light">
+      <main className="w-full max-w-2xl px-4 py-16 text-center">
+        {/* 顶部大标题 */}
+        <h1 className="text-3xl md:text-4xl font-light mb-12">我是 XXX</h1>
+        
+        {/* 三段个人介绍 */}
+        <div className="mb-16 text-left">
+          <div className="mb-8">
+            <h2 className="text-lg font-light mb-2">我是谁</h2>
+            <p className="text-sm leading-relaxed">
+              我是一名对编程充满热情的学习者，目前正在积极探索前端开发和AI技术的结合。我热爱解决问题，喜欢通过代码创造有价值的应用。
+            </p>
+          </div>
+          
+          <div className="mb-8">
+            <h2 className="text-lg font-light mb-2">我为什么学 AI 编程</h2>
+            <p className="text-sm leading-relaxed">
+              人工智能技术正在迅速改变我们的生活和工作方式。我学习AI编程是因为我相信AI与编程的结合将创造出令人惊叹的可能性，我希望能够掌握这项技能，开发出更智能、更高效的应用。
+            </p>
+          </div>
+          
+          <div className="mb-8">
+            <h2 className="text-lg font-light mb-2">我接下来想做什么项目</h2>
+            <p className="text-sm leading-relaxed">
+              接下来，我计划开发一个AI辅助学习平台，帮助用户更高效地学习编程知识。此外，我还想尝试创建一个简单的AI内容生成工具，用于辅助日常工作和创作。
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        
+        {/* 底部按钮 */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link 
+            href="/projects" 
+            className="px-6 py-3 border border-black text-black hover:bg-gray-100 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            我的项目
+          </Link>
+          
+          <a 
+            href="mailto:example@example.com" 
+            className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors"
           >
-            Documentation
+            联系我
           </a>
         </div>
       </main>
