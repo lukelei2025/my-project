@@ -38,7 +38,20 @@ export default function Projects() {
             </div>
           </div>
           
-          {/* 第四个项目 */}
+          {/* 第四个项目：大模型聊天 */}
+          <div className="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h2 className="text-xl font-light mb-2">大模型聊天助手</h2>
+            <p className="text-sm text-gray-600 mb-3">
+              连接自建的 AI Chat API，可以与模型实时对话，并展示用户与助手的消息记录。
+            </p>
+            <div className="flex justify-end">
+              <Link href="/chat" className="text-sm text-gray-600 underline">
+                体验聊天工具
+              </Link>
+            </div>
+          </div>
+          
+          {/* 第五个项目 */}
           <div className="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <h2 className="text-xl font-light mb-2">未来想做的产品</h2>
             <p className="text-sm text-gray-600 mb-3">先留一个空位</p>

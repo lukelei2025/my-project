@@ -27,9 +27,17 @@ export default function ChatPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input })
       })
- 
+
+      if (!res.ok) {
+        const errorText = await res.text()
+        console.error(`聊天接口返回错误：${res.status} ${res.statusText}`, errorText)
+        alert('请求失败，请稍后重试')
+        setLoading(false)
+        return
+      }
+
       const data = await res.json()
- 
+
       const assistantMessage: ChatMessage = {
         role: 'assistant',
         content: data.reply
@@ -37,6 +45,7 @@ export default function ChatPage() {
       setMessages(prev => [...prev, assistantMessage])
     } catch (error) {
       console.error('发送失败', error)
+      alert('网络异常，请稍后再试')
     }
  
     setLoading(false)
