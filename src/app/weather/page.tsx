@@ -1,33 +1,21 @@
 'use client'
  
 import { useState } from 'react'
-
-type WeatherResponse = {
-  location: {
-    name: string
-  }
-  current: {
-    temp_c: number
-    condition: {
-      text: string
-    }
-  }
-}
  
 export default function WeatherPage() {
   const [city, setCity] = useState('Beijing')
-  const [weather, setWeather] = useState<WeatherResponse | null>(null)
+  const [weather, setWeather] = useState<any>(null)
   const [loading, setLoading] = useState(false)
  
   const getWeather = async () => {
     setLoading(true)
     try {
       // 注意：这里先硬编码，下一步我们会改进
-      const API_KEY = 'YOUR_API_KEY' // ⚠️ 先别这样做！
+      const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY // ⚠️ 先别这样做！
       const res = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
       )
-      const data: WeatherResponse = await res.json()
+      const data = await res.json()
       setWeather(data)
     } catch (error) {
       console.error('获取天气失败', error)
