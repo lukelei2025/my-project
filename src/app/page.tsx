@@ -39,13 +39,6 @@ export default function Home() {
           >
             我的项目
           </Link>
-
-          <Link
-            href="/weather"
-            className="px-6 py-3 border border-black text-black hover:bg-gray-100 transition-colors"
-          >
-            天气查询
-          </Link>
           
           <a 
             href="mailto:example@example.com" 

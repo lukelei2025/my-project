@@ -25,7 +25,20 @@ export default function Projects() {
             </div>
           </div>
           
-          {/* 第三个项目 */}
+          {/* 第三个项目：天气查询 */}
+          <div className="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h2 className="text-xl font-light mb-2">天气查询小工具</h2>
+            <p className="text-sm text-gray-600 mb-3">
+              可以输入城市名称，实时查看当前的温度和天气情况，是一个练习调用第三方 API 的小项目。
+            </p>
+            <div className="flex justify-end">
+              <Link href="/weather" className="text-sm text-gray-600 underline">
+                打开天气查询
+              </Link>
+            </div>
+          </div>
+          
+          {/* 第四个项目 */}
           <div className="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <h2 className="text-xl font-light mb-2">未来想做的产品</h2>
             <p className="text-sm text-gray-600 mb-3">先留一个空位</p>
