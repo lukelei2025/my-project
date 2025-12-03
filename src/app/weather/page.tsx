@@ -1,10 +1,22 @@
 'use client'
  
 import { useState } from 'react'
+
+type WeatherResponse = {
+  location: {
+    name: string
+  }
+  current: {
+    temp_c: number
+    condition: {
+      text: string
+    }
+  }
+}
  
 export default function WeatherPage() {
   const [city, setCity] = useState('Beijing')
-  const [weather, setWeather] = useState(null)
+  const [weather, setWeather] = useState<WeatherResponse | null>(null)
   const [loading, setLoading] = useState(false)
  
   const getWeather = async () => {
@@ -15,7 +27,7 @@ export default function WeatherPage() {
       const res = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
       )
-      const data = await res.json()
+      const data: WeatherResponse = await res.json()
       setWeather(data)
     } catch (error) {
       console.error('获取天气失败', error)
