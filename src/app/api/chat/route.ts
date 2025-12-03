@@ -19,15 +19,22 @@ export async function POST(request: NextRequest) {
       })
     })
  
+    if (!response.ok) {
+      const errorBody = await response.text()
+      console.error('DeepSeek API failed:', response.status, errorBody)
+      return NextResponse.json(
+        { error: '上游接口错误' },
+        { status: response.status }
+      )
+    }
+
     const data = await response.json()
  
     return NextResponse.json({
       reply: data.choices[0].message.content
     })
   } catch (error) {
-    return NextResponse.json(
-      { error: '请求失败' },
-      { status: 500 }
-    )
+    console.error('Chat API error:', error)
+    return NextResponse.json({ error: '请求失败' }, { status: 500 })
   }
 }
